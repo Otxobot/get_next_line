@@ -17,10 +17,14 @@ size_t	ft_strlen(char *str)
 
 char	*strchr(const char *s, int c)
 {
-	int count;
+	char	*chr;
 
-	count = 0;
-	while (s[count] != c)
-		count++;
-	return(count);
+	chr = (char *)s;
+	while (*chr != (char)c)
+	{
+		if (!*chr)
+			return (NULL);
+		chr++;
+	}
+	return (chr);
 }
