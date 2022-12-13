@@ -6,7 +6,7 @@
 /*   By: abasante <abasante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:33:49 by abasante          #+#    #+#             */
-/*   Updated: 2022/12/13 13:33:52 by abasante         ###   ########.fr       */
+/*   Updated: 2022/12/13 16:05:38 by abasante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,12 @@ char	*strjoin(const char *s1, const char *s2)
 	unsigned int x;
 	char	*str1;
 
-	y1 = ft_strlen(s1);
-	y2 = ft_strlen(s2);
+	y1 = ft_strlen((char *)s1);
+	y2 = ft_strlen((char *)s2);
 	i = 0;
 	x = -1;
 
-	str1 = malloc (sizeof(char) * (y1 + y2 + 1));
+	str1 = malloc(sizeof(char) * (y1 + y2 + 1));
 	if (!str1)
 		return (NULL);
 	while (*s1)

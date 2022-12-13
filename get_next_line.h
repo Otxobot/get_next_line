@@ -6,7 +6,7 @@
 /*   By: abasante <abasante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:34:00 by abasante          #+#    #+#             */
-/*   Updated: 2022/12/13 15:56:57 by abasante         ###   ########.fr       */
+/*   Updated: 2022/12/13 16:04:48 by abasante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdio.h>
 # include <string.h>
+# include <stdlib.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE BUFSIZ
