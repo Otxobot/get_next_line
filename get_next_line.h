@@ -6,7 +6,7 @@
 /*   By: abasante <abasante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:34:00 by abasante          #+#    #+#             */
-/*   Updated: 2022/12/13 13:34:02 by abasante         ###   ########.fr       */
+/*   Updated: 2022/12/13 15:56:57 by abasante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 #  define BUFFER_SIZE BUFSIZ
 # endif
 
-char *get_next_line(int fd);
+char	*get_next_line(int fd);
+size_t	ft_strlen(char *str);
+char	*strchr(const char *s, int c);
+char	*strjoin(const char *s1, const char *s2);
 
 #endif

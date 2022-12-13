@@ -6,7 +6,7 @@
 /*   By: abasante <abasante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:33:44 by abasante          #+#    #+#             */
-/*   Updated: 2022/12/13 14:04:29 by abasante         ###   ########.fr       */
+/*   Updated: 2022/12/13 15:50:58 by abasante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,13 @@ char	*get_line(char *line)
 		s[i] = line[i];
 		i++;
 	}
-	
+	if (line[i] == '\n')
+	{
+		s[i] == line[i];
+		i++;
+	}
+	s[i] = '\0';
+	return (s);
 }
 
 
