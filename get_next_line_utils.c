@@ -6,7 +6,7 @@
 /*   By: abasante <abasante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:33:49 by abasante          #+#    #+#             */
-/*   Updated: 2022/12/13 16:05:38 by abasante         ###   ########.fr       */
+/*   Updated: 2022/12/16 13:06:49 by abasante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*strchr(const char *s, int c)
 	while (*chr != (char)c)
 	{
 		if (!*chr)
-			return (NULL);
+			return (0);
 		chr++;
 	}
 	return (chr);
@@ -55,7 +55,7 @@ char	*strjoin(const char *s1, const char *s2)
 
 	str1 = malloc(sizeof(char) * (y1 + y2 + 1));
 	if (!str1)
-		return (NULL);
+		return (0);
 	while (*s1)
 	{
 		str1[i] = s1[i];
@@ -65,4 +65,24 @@ char	*strjoin(const char *s1, const char *s2)
 		str1[i++] =  s2[x];
 	str1[i] = '\0';
 	return (str1);
+}
+
+char	*ft_strdup(const char *s1)
+{
+	int		cont;
+	char	*s1_new;
+	int		size;
+
+	size = ft_strlen (s1);
+	s1_new = malloc (sizeof(char) * size + 1);
+	if (!s1_new)
+		return (0);
+	cont = 0;
+	while (s1[cont] != '\0')
+	{
+		s1_new[cont] = s1[cont];
+		cont++;
+	}
+	s1_new[cont] = s1[cont];
+	return (s1_new);
 }
