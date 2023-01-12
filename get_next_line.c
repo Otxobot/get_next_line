@@ -6,7 +6,7 @@
 /*   By: abasante <abasante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:18:11 by abasante          #+#    #+#             */
-/*   Updated: 2023/01/12 16:51:40 by abasante         ###   ########.fr       */
+/*   Updated: 2023/01/12 17:08:19 by abasante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ char *ft_get_line(char *save)
  
 char *ft_save(char *save)
 {
-	// printf("save: %s\n",save);
-	// printf("------------------------");
     int i;
     char *str;
     for (i = 0; save[i] && save[i] != '\n'; i++);
@@ -75,21 +73,15 @@ char	*ft_read_and_save(int fd, char *save)
 	read_bytes = 1;
 	while (!ft_strchr(save, '\n') && read_bytes != 0)
 	{
-		//printf("save: %s\n",save);
-		//printf("read_bytes: %d\n",read_bytes);
 		read_bytes = read(fd, buff, BUFFER_SIZE);
-		// printf("read_bytes: %d\n", read_bytes);
 		if (read_bytes == -1)
 		{
 			free(buff);
 			buff = NULL;
 			return (NULL);
 		}
-		// printf("save: %s\n",save);
-		// printf("buff: %s\n", buff);
 		buff[read_bytes] = '\0';
 		save = ft_strjoin(save, buff);
-		// printf("save: %s\n",save);
 	}
 	free(buff);
 	buff = NULL;
