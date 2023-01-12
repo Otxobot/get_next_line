@@ -6,7 +6,7 @@
 /*   By: abasante <abasante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:18:25 by abasante          #+#    #+#             */
-/*   Updated: 2023/01/09 09:18:28 by abasante         ###   ########.fr       */
+/*   Updated: 2023/01/12 16:52:48 by abasante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,4 +109,30 @@ i = 0;
 	while (src[i])
 		i++;
 	return (i);
+}
+
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*dest;
+
+	dest = malloc(size * count);
+	if (!dest)
+		return (NULL);
+	ft_memset (dest, 0, size * count);
+	return (dest);
+}
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+	unsigned char	*str;
+	size_t			i;
+
+	i = 0;
+	str = (unsigned char *)b;
+	while (i < len)
+	{
+		str[i] = c;
+		i++;
+	}
+	return (str);
 }
