@@ -6,7 +6,7 @@
 /*   By: abasante <abasante@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:18:11 by abasante          #+#    #+#             */
-/*   Updated: 2023/01/12 17:08:19 by abasante         ###   ########.fr       */
+/*   Updated: 2023/01/16 12:14:01 by abasante         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,17 @@ char *ft_get_line(char *save)
 	int		i;
 
 	i = 0;
-	// if no line return NULL
 	if (!save[i])
 		return (NULL);
-	// go to the eol
 	while (save[i] && save[i] != '\n')
 		i++;
-	// malloc to eol
 	line = ft_calloc(i + 2, sizeof(char));
 	i = 0;
-	// line = buffer
 	while (save[i] && save[i] != '\n')
 	{
 		line[i] = save[i];
 		i++;
 	}
-	// if eol is \0 or \n, replace eol by \n
 	if (save[i] && save[i] == '\n')
 		line[i++] = '\n';
 	return (line);
@@ -49,17 +44,12 @@ char *ft_save(char *save)
         free(save);
         return NULL;
     }
-    // Allocate a new string for the remaining part of the save string
     str = malloc(ft_strlen(save + 1) + 1);
-	//printf("len: %zu\n", ft_strlen(save + i + 1));
     if (!str)
         return NULL;
-    // Copy the remaining part of the save string into str and add a null terminator
     ft_strlcpy(str, save + i + 1, ft_strlen(save + i + 1) + 1);
-    // Free the memory allocated to save and set it to NULL
     free(save);
     save = NULL;
-    // Return the new string
     return str;
 }
 
